@@ -11,6 +11,7 @@ class transmit_goal:
 		rospy.spin()
 
 
+
 	def transmit_goal_service(self, input_goal):
 		pose = Pose()
 		pose.position.x = input_goal.point.x
