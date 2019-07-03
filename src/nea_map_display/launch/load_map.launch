@@ -1,4 +1,9 @@
 <launch>
 	<arg name="map_file" default="$(find nea_map_display)/maps/nea_map.yaml"/>
 	<node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)"/>
+
+	<node type="rviz" name="rviz" pkg="rviz" args="-d $(find nea_map_display)/config/nea_map_config.rviz" />
+
+	<node name="transmit_goal" pkg="nea_map_display"	type="transmit_selected_goal.py"	output="screen"/>
+	
 </launch>

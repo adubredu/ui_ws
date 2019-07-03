@@ -1,3 +1,4 @@
+#! /usr/bin/env python
 import rospy
 from geometry_msgs.msg import PointStamped, Pose 
 from nea_map_display.srv import *
