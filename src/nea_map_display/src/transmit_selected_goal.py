@@ -12,7 +12,11 @@ class transmit_goal:
 
 
 
-	def transmit_goal_service(self, input_goal):
+	def transmit_goal_service(self, input_goal):	
+		stop_pub = rospy.Publisher("/terminate_planning", Bool, queue_size=1)
+		stop_moving = Bool()
+		stop_moving.data = True
+		stop_pub.publish(stop_moving)
 		pose = Pose()
 		pose.position.x = input_goal.point.x
 		pose.position.y = input_goal.point.y
